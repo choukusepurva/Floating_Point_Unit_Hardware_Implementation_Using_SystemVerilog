@@ -179,7 +179,7 @@ module top_FPU ( clk, rst, operation, a_fpn, b_fpn, out );
               flag = (a_fpn[22:0] < b_fpn[22:0]) ? 1 : 0;  // if deno > num
               exp_out = exp_a - exp_b + 127 - flag;
               //////////////////////////////////////////////////////////////////////
-              // Division Algorithm
+              // Division Algorithm- Repeated Subtraction Method
               // mant_out_d = mant_a_d / mant_b_d;
               b1 = mant_b_d;
               {acc, quo} = {{93{1'b0}}, mant_a_d, 1'b0};  // initialize calculation      
